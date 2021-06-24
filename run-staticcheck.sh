@@ -4,7 +4,7 @@ failed=false
 
 for file in "$@"; do
     # redirect stderr so that violations and summaries are properly interleaved.
-    if ! staticcheck "$file" 2>&1
+    if ! staticcheck -f stylish "$file" 2>&1
     then
         failed=true
     fi
