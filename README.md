@@ -9,6 +9,7 @@ golang hooks for http://pre-commit.com/
 
 Add this to your `.pre-commit-config.yaml`
 
+```
 repos:
 - repo: git://github.com/ghiyastfarisi/goprec
   rev: master
@@ -27,6 +28,7 @@ repos:
     - id: go-build
     - id: go-mod-tidy
     - id: go-staticcheck
+```
 
 ### Available hooks
 
