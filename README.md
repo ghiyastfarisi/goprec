@@ -1,3 +1,4 @@
+this is a fork of https://github.com/dnephin/pre-commit-golang
 
 pre-commit-golang
 =================
@@ -8,22 +9,24 @@ golang hooks for http://pre-commit.com/
 
 Add this to your `.pre-commit-config.yaml`
 
-    - repo: git://github.com/dnephin/pre-commit-golang
-      rev: master
-      hooks:
-        - id: go-fmt
-        - id: go-vet
-        - id: go-lint
-        - id: go-imports
-        - id: go-cyclo
-          args: [-over=15]
-        - id: validate-toml
-        - id: no-go-testing
-        - id: golangci-lint
-        - id: go-critic
-        - id: go-unit-tests
-        - id: go-build
-        - id: go-mod-tidy
+repos:
+- repo: git://github.com/ghiyastfarisi/goprec
+  rev: master
+  hooks:
+    - id: go-fmt
+    - id: go-vet
+    - id: go-lint
+    - id: go-imports
+    - id: go-cyclo
+      args: [-over=15]
+    - id: validate-toml
+    - id: no-go-testing
+    - id: golangci-lint
+    - id: go-critic
+    - id: go-unit-tests
+    - id: go-build
+    - id: go-mod-tidy
+    - id: go-staticcheck
 
 ### Available hooks
 
@@ -43,3 +46,4 @@ Add this to your `.pre-commit-config.yaml`
 - `go-build` - run `go build`, requires golang
 - `go-mod-tidy` - run `go mod tidy -v`, requires golang
 - `go-mod-vendor` - run `go mod vendor`, requires golang
+- `go-staticcheck` - run `staticcheck ./...`, requires staticcheck
